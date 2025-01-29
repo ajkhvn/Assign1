@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Order Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Coffee Shop Order Form</h1>
+    <form id="coffeeOrderForm">
+        
+        <!-- Customer Information -->
+        <label for="name">Full Name: *</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required autofocus>
+        
+        <label for="email">Email: *</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <label for="phone">Phone Number: *</label>
+        <input type="tel" id="phone" name="phone" pattern="\d{3}-\d{3}-\d{4}" placeholder="123-456-7890" required>
+
+        <!-- Coffee Selection -->
+        <label for="coffeeType">Select Coffee Type: *</label>
+        <select id="coffeeType" name="coffeeType" required>
+            <option value="">-- Select --</option>
+            <option value="espresso">Espresso</option>
+            <option value="latte">Latte</option>
+            <option value="cappuccino">Cappuccino</option>
+            <option value="americano">Americano</option>
+            <option value="mocha">Mocha</option>
+        </select>
+
+        <label for="size">Select Size: *</label>
+        <select id="size" name="size" required>
+            <option value="">-- Select --</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+
+        <!-- Add-ons (Checkboxes) -->
+        <fieldset>
+            <legend>Extra Add-ons:</legend>
+            <input type="checkbox" id="sugar" name="addons" value="sugar">
+            <label for="sugar">Sugar</label>
+
+            <input type="checkbox" id="milk" name="addons" value="milk">
+            <label for="milk">Milk</label>
+
+            <input type="checkbox" id="whippedCream" name="addons" value="whippedCream">
+            <label for="whippedCream">Whipped Cream</label>
+        </fieldset>
+
+        <!-- Payment Method (Radio Buttons) -->
+        <fieldset>
+            <legend>Payment Method: *</legend>
+            <input type="radio" id="creditCard" name="payment" value="creditCard" required>
+            <label for="creditCard">Credit Card</label>
+
+            <input type="radio" id="debitCard" name="payment" value="debitCard">
+            <label for="debitCard">Debit Card</label>
+
+            <input type="radio" id="cash" name="payment" value="cash">
+            <label for="cash">Cash</label>
+        </fieldset>
+
+        <!-- Special Requests -->
+        <label for="specialRequests">Special Requests:</label>
+        <textarea id="specialRequests" name="specialRequests" rows="5" cols="40" onfocus="showPopup()"></textarea>
+
+        <!-- File Upload -->
+        <label for="receiptUpload">Upload Your Last Receipt (Optional):</label>
+        <input type="file" id="receiptUpload" name="receiptUpload">
+
+        <!-- Password (For VIP Members) -->
+        <label for="vipPassword">VIP Member Password:</label>
+        <input type="password" id="vipPassword" name="vipPassword" required pattern="(?=.[A-Za-z])(?=.\d)(?=.[@$!%#?&])[A-Za-z\d@$!%*#?&]{8,}" placeholder="At least 8 characters, 1 number, 2 special symbols">
+
+        <!-- Reset & Submit Buttons -->
+        <button type="reset" onclick="resetMessage()">Reset</button>
+        <span id="resetMsg"></span>
+
+        <button type="submit" onclick="return confirmSubmit()">Submit</button>
+    </form>
+</body>
+</html>
