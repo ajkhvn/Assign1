@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+fieldset {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background-color: red;
+    color: white;
+}
+
+button[type="submit"] {
+    background-color: green;
+    color: white;
+}
